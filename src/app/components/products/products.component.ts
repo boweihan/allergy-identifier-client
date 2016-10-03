@@ -24,7 +24,7 @@ export class ProductsComponent implements OnInit {
   }
   
   addToProductArray(product) {
-    if (this.crossProducts === [] || this.crossProducts.includes(product) === false) {
+    if (this.crossProducts === [] || this.crossProducts.includes(product) === false) { /* NOTE: this error is not a real error */
       this.crossProducts.push(product);  
     }
   }
