@@ -12,6 +12,7 @@ import { Product } from '../../models/product';
 })
 export class ProductsComponent implements OnInit {
   products: Observable<Product[]>;
+  crossProducts = [];
   private searchTerms = new Subject<string>(); /* NOTE: subject for observable transformation */
 
   constructor(
@@ -20,6 +21,12 @@ export class ProductsComponent implements OnInit {
 
   getProducts(term: string): void { /* NOTE: pushing into the observable stream */
     this.searchTerms.next(term);
+  }
+  
+  addToProductArray(product) {
+    if (this.crossProducts === [] || this.crossProducts.includes(product) === false) {
+      this.crossProducts.push(product);  
+    }
   }
   
   ngOnInit() {

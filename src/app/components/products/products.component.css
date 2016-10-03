@@ -5,3 +5,10 @@
 .vs-add-product {
   background-color: #99D3DF; /* NOTE: ice */
 }
+
+.vs-plus {
+  margin-right: 10px;
+}
+  .vs-plus:hover {
+    transform: scale(1.5);
+  }

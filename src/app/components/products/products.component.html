@@ -3,14 +3,24 @@
     <div class="input-group">
       <input #productSearch type="text" class="form-control" placeholder="Search for product..." (keyup)="getProducts(productSearch.value)">
       <span class="input-group-btn">
-        <button class="btn btn-default vs-add-product" type="button" (click)="getProducts();productSearch.value=null;">Clear Search</button>
+        <button class="btn btn-default vs-add-product" type="button" (click)="getProducts();productSearch.value=null;">Clear</button>
       </span>
     </div>
   </div>
   
-  <div *ngIf="products">
-    <div *ngFor="let product of products | async" class="search-result" >
-      {{product.name}}
+  <div class="col-lg-4">
+    <div *ngIf="crossProducts">
+      <div *ngFor="let crossProduct of crossProducts">
+        <p>{{crossProduct.name}}</p>
+      </div>
+    </div>
+  </div>
+    
+  <div class="col-lg-8">
+    <div *ngIf="products">
+      <div *ngFor="let product of products | async" class="search-result" >
+        <p><i class="fa fa-plus vs-plus" aria-hidden="true" (click)="addToProductArray(product)"></i>{{product.name}}</p>
+      </div>
     </div>
   </div>
 </div>
