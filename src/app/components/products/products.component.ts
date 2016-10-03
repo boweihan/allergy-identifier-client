@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductSearchService } from '../../services/product-search-service/product-search.service';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-import { Product } from '../product';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-products',
@@ -20,7 +20,6 @@ export class ProductsComponent implements OnInit {
 
   getProducts(term: string): void { /* NOTE: pushing into the observable stream */
     this.searchTerms.next(term);
-    console.log(term);
   }
   
   ngOnInit() {
