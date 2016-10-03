@@ -1,0 +1,11 @@
+.vs-landing-background {
+  background-image: url("../assets/landing1.jpg");
+  height: calc(100vh - 78px);
+  width: 100vw;
+}
+
+.vs-landing-title {
+  padding: 150px 0px 0px 350px;
+  font-size: 3em;
+  color: #CD7F32;
+}

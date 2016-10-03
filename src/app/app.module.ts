@@ -10,6 +10,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 
 import { AllergyClientRoutingModule } from './app-routing.module';
 import { CrossReferenceComponent } from './cross-reference/cross-reference.component';
+import { ProductsComponent } from './products/products.component';
+import { IngredientsComponent } from './ingredients/ingredients.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { CrossReferenceComponent } from './cross-reference/cross-reference.compo
     NavbarComponent,
     FooterComponent,
     LandingPageComponent,
-    CrossReferenceComponent
+    CrossReferenceComponent,
+    ProductsComponent,
+    IngredientsComponent
   ],
   imports: [
     BrowserModule,
