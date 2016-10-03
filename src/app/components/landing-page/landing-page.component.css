@@ -7,5 +7,7 @@
 .vs-landing-title {
   padding: 150px 0px 0px 350px;
   font-size: 3em;
-  color: #CD7F32;
+  color: white;
+  font-family: 'Gentium Book Basic', serif;
+  text-transform: uppercase;
 }
