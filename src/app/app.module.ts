@@ -9,13 +9,15 @@ import { FooterComponent } from './footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
 import { AllergyClientRoutingModule } from './app-routing.module';
+import { CrossReferenceComponent } from './cross-reference/cross-reference.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    CrossReferenceComponent
   ],
   imports: [
     BrowserModule,

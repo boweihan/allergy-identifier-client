@@ -1,0 +1,6 @@
+.vs-navbar {
+  min-width: 800px; 
+  padding: 4px 16px;
+  background-color: #CDCDCD !important; /* NOTE plaster */;
+  border-radius: 0;
+}
