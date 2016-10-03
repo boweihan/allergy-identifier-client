@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { CrossReferenceComponent } from './cross-reference/cross-reference.component';
-import { ProductsComponent } from './products/products.component';
-import { IngredientsComponent } from './ingredients/ingredients.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { CrossReferenceComponent } from './components/cross-reference/cross-reference.component';
+import { ProductsComponent } from './components/products/products.component';
+import { IngredientsComponent } from './components/ingredients/ingredients.component';
 
 const routes: Routes = [
   {

@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './main/app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AppComponent } from './components/main/app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 import { AllergyClientRoutingModule } from './app-routing.module';
-import { CrossReferenceComponent } from './cross-reference/cross-reference.component';
-import { ProductsComponent } from './products/products.component';
-import { IngredientsComponent } from './ingredients/ingredients.component';
+import { CrossReferenceComponent } from './components/cross-reference/cross-reference.component';
+import { ProductsComponent } from './components/products/products.component';
+import { IngredientsComponent } from './components/ingredients/ingredients.component';
+
+import 'rxjs/Rx';
 
 @NgModule({
   declarations: [

@@ -1,0 +1,17 @@
+<div class="container vs-landing-container">
+  <div class="col-lg-12" style="padding: 20px 0">
+    <div class="input-group">
+      <input #productSearch type="text" class="form-control" placeholder="Search for product..." (keyup)="getProducts(productSearch.value)">
+      <span class="input-group-btn">
+        <button class="btn btn-default vs-add-product" type="button" (click)="getProducts('')">Clear Search</button>
+      </span>
+    </div>
+  </div>
+  
+  <div>
+    <div *ngFor="let product of products | async" class="search-result" >
+      {{product.name}}
+    </div>
+  </div>
+</div>
+
