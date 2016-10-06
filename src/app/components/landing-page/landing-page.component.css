@@ -1,5 +1,6 @@
 .vs-landing-background {
   background-image: url("../assets/landing1.jpg");
+  filter: grayscale(100%);
   height: calc(100vh - 78px);
   width: 100vw;
 }

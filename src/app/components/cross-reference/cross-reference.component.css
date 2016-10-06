@@ -3,5 +3,6 @@
 }
 
 .vs-add-product {
-  background-color: #99D3DF; /* NOTE: ice */
+  /*background-color: #99D3DF; /* NOTE: ice */*/
+  background-color: gray;
 }

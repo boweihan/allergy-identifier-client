@@ -3,24 +3,33 @@
     <div class="input-group">
       <input #productSearch type="text" class="form-control" placeholder="Search for product..." (keyup)="getProducts(productSearch.value)">
       <span class="input-group-btn">
-        <button class="btn btn-default vs-add-product" type="button" (click)="getProducts();productSearch.value=null;">Clear</button>
+        <button class="btn btn-default vs-clear-search" type="button" (click)="getProducts();productSearch.value=null;">Clear</button>
       </span>
     </div>
   </div>
   
-  <div class="col-lg-4">
-    <div *ngIf="crossProducts">
-      <div *ngFor="let crossProduct of crossProducts">
-        <p>{{crossProduct.name}}</p>
-      </div>
+  <div class="col-sm-4 vs-product-search">
+    <div *ngIf="products">
+      <ul *ngFor="let product of products | async" class="search-result" >
+        <li class='vs-search-results'><i class="fa fa-plus vs-plus" aria-hidden="true" (click)="addToProductArray(product)"></i>{{product.name}}</li>
+      </ul>
     </div>
   </div>
-    
-  <div class="col-lg-8">
-    <div *ngIf="products">
-      <div *ngFor="let product of products | async" class="search-result" >
-        <p><i class="fa fa-plus vs-plus" aria-hidden="true" (click)="addToProductArray(product)"></i>{{product.name}}</p>
-      </div>
+  
+  <div class="col-sm-4 vs-cross-products">
+    <div *ngIf="crossProducts.length != 0">
+      <h4 style='text-align: center; padding: 20px 0px;'>products to mix</h4>
+      <ul *ngFor="let crossProduct of crossProducts">
+        <li class='vs-cross-products-results'><i class="fa fa-minus vs-minus" aria-hidden="true" (click)="removeProduct(crossProduct)"></i>{{crossProduct.name}}</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="col-sm-4 vs-product-search">
+    <div *ngIf="crIngredients">
+      <ul *ngFor="let ingredient of crIngredients | async" class="search-result" >
+        <li class='vs-search-results'>{{ingredient.name}}</li>
+      </ul>
     </div>
   </div>
 </div>

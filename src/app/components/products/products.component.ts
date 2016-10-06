@@ -3,29 +3,64 @@ import { ProductSearchService } from '../../services/product-search-service/prod
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { Product } from '../../models/product';
+import { Ingredient } from '../../models/ingredient';
+import { CrossReferenceService } from '../../services/cross-reference-service/cross-reference.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
-  providers: [ProductSearchService]
+  providers: [ProductSearchService, CrossReferenceService]
 })
 export class ProductsComponent implements OnInit {
   products: Observable<Product[]>;
-  crossProducts = [];
+  crIngredients: Observable<Ingredient[]>;
+  crNames = "";
+  crossProducts= [];
   private searchTerms = new Subject<string>(); /* NOTE: subject for observable transformation */
+  private crossTerms = new Subject<string>(); /* NOTE: subject for observable cross-reference */
 
   constructor(
-    private productSearchService: ProductSearchService
+    private productSearchService: ProductSearchService,
+    private crossReferenceService: CrossReferenceService
   ) { }
 
   getProducts(term: string): void { /* NOTE: pushing into the observable stream */
     this.searchTerms.next(term);
   }
   
+  addToCrossReference(term: string): void {
+    if (!this.crNames.length) {
+      this.crNames = this.crNames + "product[]=" + encodeURI(term);
+    } else {
+      this.crNames = this.crNames + "&&product[]=" + encodeURI(term);
+    }
+    this.crossTerms.next(this.crNames);
+  }
+  
+  removeFromCrossReference(term: string): void {
+    this.crNames = this.crNames.split("&&product[]=" + encodeURI(term)).join("");
+    this.crNames = this.crNames.split("product[]=" + encodeURI(term) + "&&").join(""); /* NOTE: this sucks */
+    this.crNames = this.crNames.split("product[]=" + encodeURI(term)).join("");
+    console.log(this.crNames);
+    this.crossTerms.next(this.crNames);
+  }
+  
   addToProductArray(product) {
     if (this.crossProducts === [] || this.crossProducts.includes(product) === false) { /* NOTE: this error is not a real error */
       this.crossProducts.push(product);  
+      this.addToCrossReference(product.name);
+    }
+  }
+  
+  removeProduct(product) {
+    for (let i=0;i<this.crossProducts.length;i++) {
+      console.log(this.crossProducts[i].name);
+      console.log(product.name);
+      if (this.crossProducts[i].name === product.name) {
+        this.crossProducts.splice(i, 1);
+        this.removeFromCrossReference(product.name);
+      }
     }
   }
   
@@ -40,7 +75,19 @@ export class ProductsComponent implements OnInit {
         console.log(error);
         return Observable.of<Product[]>([]);
       });
+      
+    this.crIngredients = this.crossTerms
+      .debounceTime(300)        // wait for 300ms pause in events
+      .distinctUntilChanged()   // ignore if next search term is same as previous
+      .switchMap(term => term   // switch to new observable each time
+        ? this.crossReferenceService.getCrossReferencedIngredients(term)
+        : Observable.of<Ingredient[]>([]))
+      .catch(error => {
+        console.log(error);
+        return Observable.of<Ingredient[]>([]);
+      });
   }
+
 
 }
 

@@ -3,7 +3,7 @@
     <div class="input-group">
       <input #ingredientSearch type="text" class="form-control" placeholder="Search for ingredient..." (keyup)="getIngredients(ingredientSearch.value)">
       <span class="input-group-btn">
-        <button class="btn btn-default vs-add-product" type="button" (click)="getIngredients();ingredientSearch.value=null;">Clear</button>
+        <button class="btn btn-default vs-clear-search" type="button" (click)="getIngredients();ingredientSearch.value=null;">Clear</button>
       </span>
     </div>
   </div>

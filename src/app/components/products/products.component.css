@@ -2,8 +2,9 @@
   border-radius: 10px;
 }
 
-.vs-add-product {
-  background-color: #99D3DF; /* NOTE: ice */
+.vs-clear-search {
+  /*background-color: #99D3DF; /* NOTE: ice */*/
+  background-color: gray;
 }
 
 .vs-plus {
@@ -12,3 +13,24 @@
   .vs-plus:hover {
     transform: scale(1.5);
   }
+
+.vs-cross-products {
+  min-height: 0px;
+  background-color: white;
+}
+
+.vs-product-search {
+
+}
+
+.vs-search-results {
+  border-bottom: 4px solid white;
+  padding: 10px 10px;
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+.vs-cross-products-results {
+  padding: 0px 20px;
+  list-style-type: none;
+}
