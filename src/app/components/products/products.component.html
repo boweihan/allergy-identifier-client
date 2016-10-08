@@ -1,4 +1,4 @@
-<div class="container vs-landing-container">
+<div class="container">
   <div class="col-lg-12" style="padding: 20px 0">
     <div class="input-group">
       <input #productSearch type="text" class="form-control" placeholder="Search for product..." (keyup)="getProducts(productSearch.value)">
@@ -8,27 +8,26 @@
     </div>
   </div>
   
-  <div class="col-sm-4 vs-product-search">
+  <div class="col-sm-4 vs-products-columns" style="border-right: 2px solid white; border-bottom: 5px solid #E9E9E9;">
     <div *ngIf="products">
-      <ul *ngFor="let product of products | async" class="search-result" >
+      <ul class="vs-clear-style" *ngFor="let product of products | async" class="search-result" >
         <li class='vs-search-results'><i class="fa fa-plus vs-plus" aria-hidden="true" (click)="addToProductArray(product)"></i>{{product.name}}</li>
       </ul>
     </div>
   </div>
   
-  <div class="col-sm-4 vs-cross-products">
+  <div class="col-sm-4 vs-products-columns" style="border-right: 2px solid white; border-bottom: 5px solid #E9E9E9;">
     <div *ngIf="crossProducts.length != 0">
-      <h4 style='text-align: center; padding: 20px 0px;'>products to mix</h4>
-      <ul *ngFor="let crossProduct of crossProducts">
-        <li class='vs-cross-products-results'><i class="fa fa-minus vs-minus" aria-hidden="true" (click)="removeProduct(crossProduct)"></i>{{crossProduct.name}}</li>
+      <ul class="vs-clear-style" *ngFor="let crossProduct of crossProducts">
+        <li class='vs-cross-products-selections'><i class="fa fa-minus vs-minus" aria-hidden="true" (click)="removeProduct(crossProduct)"></i>{{crossProduct.name}}</li>
       </ul>
     </div>
   </div>
   
-  <div class="col-sm-4 vs-product-search">
+  <div class="col-sm-4 vs-products-columns" style="border-bottom: 5px solid #E9E9E9;">
     <div *ngIf="crIngredients">
-      <ul *ngFor="let ingredient of crIngredients | async" class="search-result" >
-        <li class='vs-search-results'>{{ingredient.name}}</li>
+      <ul class="vs-clear-style" *ngFor="let ingredient of crIngredients | async" class="search-result" >
+        <li class='vs-cross-products-ingredients'>{{ingredient.name}}</li>
       </ul>
     </div>
   </div>

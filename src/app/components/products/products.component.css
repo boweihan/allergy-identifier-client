@@ -1,5 +1,5 @@
-.vs-landing-container {
-  border-radius: 10px;
+.vs-products-page {
+  padding-bottom: 50px;
 }
 
 .vs-clear-search {
@@ -8,29 +8,51 @@
 }
 
 .vs-plus {
-  margin-right: 10px;
+  margin-right: 10px
 }
   .vs-plus:hover {
+    transform: scale(2);
+  }
+  
+.vs-minus {
+  margin-right: 10px;
+}
+  .vs-minus:hover {
     transform: scale(1.5);
   }
 
-.vs-cross-products {
+.vs-products-columns {
   min-height: 0px;
-  background-color: white;
-}
-
-.vs-product-search {
-
+  padding: 0px;
+  background-color: #E9E9E9;
 }
 
 .vs-search-results {
-  border-bottom: 4px solid white;
-  padding: 10px 10px;
-  padding-left: 0px;
+  padding: 10px;
+  margin: 0 10px;
   list-style-type: none;
+  font-size: 12px;
+  background-color: #F7F7F9;
 }
 
-.vs-cross-products-results {
-  padding: 0px 20px;
+.vs-cross-products-selections {
+  padding: 10px;
+  margin: 0 10px;
   list-style-type: none;
+  font-size: 12px;
+  background-color: white;
+}
+
+.vs-cross-products-ingredients {
+  padding: 10px;
+  margin: 0 10px;
+  list-style-type: none;
+  font-size: 12px;
+  background-color: #F7F7F9;
+  text-align: center;
+}
+
+.vs-clear-style {
+  margin: 0;
+  padding: 0;
 }
