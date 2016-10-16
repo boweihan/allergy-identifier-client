@@ -8,9 +8,9 @@
     </div>
   </div>
   
-  <div *ngIf="productSearch.value === ''" class="vs-search-image-container"><img src="../../../assets/product.png" class="vs-search-image"/></div>
-  
-  <div class="col-sm-4 vs-products-columns" style="border-right: 2px solid white; border-bottom: 5px solid #E9E9E9;">
+  <div *ngIf="productSearch.value === '' && crossProducts.length === 0" class="vs-search-image-container"><img src="../../../assets/product.png" class="vs-search-image"/></div>
+
+  <div class="col-sm-4 vs-products-columns" style="border-right: 2px solid white;">
     <div *ngIf="products">
       <ul class="vs-clear-style" *ngFor="let product of products | async" class="search-result" >
         <li class='vs-search-results'><i class="fa fa-plus vs-plus" aria-hidden="true" (click)="addToProductArray(product)"></i>{{product.name}}</li>
@@ -18,7 +18,7 @@
     </div>
   </div>
   
-  <div class="col-sm-4 vs-products-columns" style="border-right: 2px solid white; border-bottom: 5px solid #E9E9E9;">
+  <div class="col-sm-4 vs-products-columns" style="">
     <div *ngIf="crossProducts.length != 0">
       <ul class="vs-clear-style" *ngFor="let crossProduct of crossProducts">
         <li class='vs-cross-products-selections'><i class="fa fa-minus vs-minus" aria-hidden="true" (click)="removeProduct(crossProduct)"></i>{{crossProduct.name}}</li>
@@ -26,7 +26,7 @@
     </div>
   </div>
   
-  <div class="col-sm-4 vs-products-columns" style="border-bottom: 5px solid #E9E9E9;">
+  <div class="col-sm-4 vs-products-columns" style="border-left: 2px solid white;">
     <div *ngIf="crIngredients">
       <ul class="vs-clear-style" *ngFor="let ingredient of crIngredients | async" class="search-result" >
         <li class='vs-cross-products-ingredients'>{{ingredient.name}}</li>
