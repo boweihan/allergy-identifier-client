@@ -4,25 +4,25 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { Product } from '../../models/product';
 import { Ingredient } from '../../models/ingredient';
-import { CrossReferenceService } from '../../services/cross-reference-service/cross-reference.service';
+import { CrossProductsService } from '../../services/cross-products-service/cross-products.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
-  providers: [ProductSearchService, CrossReferenceService]
+  providers: [ProductSearchService, CrossProductsService]
 })
 export class ProductsComponent implements OnInit {
   products: Observable<Product[]>;
   crIngredients: Observable<Ingredient[]>;
   crNames = "";
-  crossProducts= [];
+  crossProducts = [];
   private searchTerms = new Subject<string>(); /* NOTE: subject for observable transformation */
   private crossTerms = new Subject<string>(); /* NOTE: subject for observable cross-reference */
 
   constructor(
     private productSearchService: ProductSearchService,
-    private crossReferenceService: CrossReferenceService
+    private crossProductsService: CrossProductsService
   ) { }
 
   getProducts(term: string): void { /* NOTE: pushing into the observable stream */
@@ -80,7 +80,7 @@ export class ProductsComponent implements OnInit {
       .debounceTime(300)        // wait for 300ms pause in events
       .distinctUntilChanged()   // ignore if next search term is same as previous
       .switchMap(term => term   // switch to new observable each time
-        ? this.crossReferenceService.getCrossReferencedIngredients(term)
+        ? this.crossProductsService.getCrossReferencedIngredients(term)
         : Observable.of<Ingredient[]>([]))
       .catch(error => {
         console.log(error);

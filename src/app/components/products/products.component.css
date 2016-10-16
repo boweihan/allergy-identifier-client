@@ -52,7 +52,17 @@
   text-align: center;
 }
 
-.vs-clear-style {
+.vs-clear-style !important {
   margin: 0;
   padding: 0;
+}
+
+.vs-search-image {
+  margin: auto;
+  display: block;
+  transform: scale(0.7);
+}
+
+.vs-search-image-container {
+  height: calc(100vh - 78px);
 }

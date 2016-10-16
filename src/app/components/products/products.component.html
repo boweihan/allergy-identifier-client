@@ -8,6 +8,8 @@
     </div>
   </div>
   
+  <div *ngIf="productSearch.value === ''" class="vs-search-image-container"><img src="../../../assets/product.png" class="vs-search-image"/></div>
+  
   <div class="col-sm-4 vs-products-columns" style="border-right: 2px solid white; border-bottom: 5px solid #E9E9E9;">
     <div *ngIf="products">
       <ul class="vs-clear-style" *ngFor="let product of products | async" class="search-result" >

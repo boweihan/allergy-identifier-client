@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Ingredient } from '../../models/ingredient';
 
 @Injectable()
-export class CrossReferenceService {
+export class CrossProductsService {
 
   constructor(
     private http: Http
@@ -12,7 +12,7 @@ export class CrossReferenceService {
 
   getCrossReferencedIngredients(products: string): Observable<Ingredient[]> {
     return this.http
-      .get("http://localhost:3000/cross_reference?"+products)
+      .get("http://localhost:3000/cross_products?"+products)
       .map((r: Response) => r.json() as Ingredient[]);
   }
 }

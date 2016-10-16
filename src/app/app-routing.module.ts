@@ -8,7 +8,7 @@ import { IngredientsComponent } from './components/ingredients/ingredients.compo
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/analyze',
+    redirectTo: '/landing',
     pathMatch: 'full'
   },
   {

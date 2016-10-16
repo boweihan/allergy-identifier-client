@@ -1,4 +1,4 @@
-<div class="container vs-landing-container">
+<div class="container">
   <div class="col-lg-12" style="padding: 20px 0">
     <div class="input-group">
       <input #ingredientSearch type="text" class="form-control" placeholder="Search for ingredient..." (keyup)="getIngredients(ingredientSearch.value)">
@@ -8,9 +8,29 @@
     </div>
   </div>
   
-  <div *ngIf="ingredients">
-    <div *ngFor="let ingredient of ingredients | async" class="search-result" >
-      {{ingredient.name}}
+  <div *ngIf="ingredientSearch.value === ''" class="vs-search-image-container"><img src="../../../assets/bunch_ingredients.png" class="vs-search-image"/></div>
+  
+  <div class="col-sm-4 vs-ingredients-columns" style="border-right: 2px solid white; border-bottom: 5px solid #E9E9E9;">
+    <div *ngIf="ingredients">
+      <ul class="vs-clear-style" *ngFor="let ingredient of ingredients | async" class="search-result" >
+        <li class='vs-search-results'><i class="fa fa-plus vs-plus" aria-hidden="true" (click)="addToIngredientArray(ingredient)"></i>{{ingredient.name}}</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="col-sm-4 vs-ingredients-columns" style="border-right: 2px solid white; border-bottom: 5px solid #E9E9E9;">
+    <div *ngIf="crossIngredients.length != 0">
+      <ul class="vs-clear-style" *ngFor="let crossIngredient of crossIngredients">
+        <li class='vs-cross-ingredients-selections'><i class="fa fa-minus vs-minus" aria-hidden="true" (click)="removeIngredient(crossIngredient)"></i>{{crossIngredient.name}}</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="col-sm-4 vs-ingredients-columns" style="border-bottom: 5px solid #E9E9E9;">
+    <div *ngIf="crProducts">
+      <ul class="vs-clear-style" *ngFor="let product of crProducts | async" class="search-result" >
+        <li class='vs-cross-ingredients-products'>{{product.name}}</li>
+      </ul>
     </div>
   </div>
 </div>
