@@ -18,6 +18,13 @@
     </div>
   </div>
   
+  <!-- if nothing has been added but ingredients have been searched-->
+  <div class="col-sm-8 vs-search-image-container" *ngIf="ingredientSearch.value != '' && crossIngredients.length === 0">
+    <img src="../../../assets/cart.png" class="vs-search-image" style="transform: scale(0.3);"/>
+    <h5 class="vs-instructional">Add ingredients from the list to see common products</h5>
+  </div>
+  
+  <!-- crossIngredients columns -->
   <div class="col-sm-4 vs-ingredients-columns" style="">
     <div *ngIf="crossIngredients.length != 0">
       <ul class="vs-clear-style" *ngFor="let crossIngredient of crossIngredients">

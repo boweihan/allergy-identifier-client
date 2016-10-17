@@ -13,11 +13,18 @@
   <div class="col-sm-4 vs-products-columns" style="border-right: 2px solid white;">
     <div *ngIf="products">
       <ul class="vs-clear-style" *ngFor="let product of products | async" class="search-result" >
-        <li class='vs-search-results'><i class="fa fa-plus vs-plus" aria-hidden="true" (click)="addToProductArray(product)"></i>{{product.name}}{{product.id}}</li>
+        <li class='vs-search-results'><i class="fa fa-plus vs-plus" aria-hidden="true" (click)="addToProductArray(product)"></i>{{product.name}}</li>
       </ul>
     </div>
   </div>
   
+  <!-- if nothing has been added but products have been searched-->
+  <div class="col-sm-8 vs-search-image-container" *ngIf="productSearch.value != '' && crossProducts.length === 0">
+    <img src="../../../assets/cart.png" class="vs-search-image" style="transform: scale(0.3);"/>
+    <h5 class="vs-instructional">Add products from the list to see common ingredients</h5>
+  </div>
+  
+  <!-- crossproducts columns -->
   <div class="col-sm-4 vs-products-columns" style="">
     <div *ngIf="crossProducts.length != 0">
       <ul class="vs-clear-style" *ngFor="let crossProduct of crossProducts">

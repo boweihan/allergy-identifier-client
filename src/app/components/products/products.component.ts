@@ -55,11 +55,9 @@ export class ProductsComponent implements OnInit {
   
   removeProduct(product) {
     for (let i=0;i<this.crossProducts.length;i++) {
-      console.log(this.crossProducts[i].name);
-      console.log(product.name);
       if (this.crossProducts[i].name === product.name) {
-        this.crossProducts.splice(i, 1);
         this.removeFromCrossReference(product.name);
+        this.crossProducts.splice(i, 1);
       }
     }
   }

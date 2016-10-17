@@ -22,7 +22,7 @@
   }
 
 .vs-ingredients-columns {
-  min-height: 0px;
+  /*min-height: 0px;*/
   padding: 0px;
   background-color: #E9E9E9;
 }
@@ -60,9 +60,17 @@
 .vs-search-image {
   margin: auto;
   display: block;
-  transform: scale(0.7);
+  transform: scale(0.5);
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .vs-search-image-container {
   height: calc(100vh - 78px);
+}
+
+.vs-instructional {
+  text-align: center; 
+  font-family: 'Gentium Book Basic', serif;
+  transform: translateY(-100px);
 }
