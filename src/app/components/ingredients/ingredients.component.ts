@@ -32,17 +32,17 @@ export class IngredientsComponent implements OnInit {
   
   addToCrossReference(term: string): void {
     if (!this.crNames.length) {
-      this.crNames = this.crNames + "ingredient[]=" + encodeURI(term);
+      this.crNames = this.crNames + "ingredient[]=" + encodeURIComponent(term);
     } else {
-      this.crNames = this.crNames + "&&ingredient[]=" + encodeURI(term);
+      this.crNames = this.crNames + "&&ingredient[]=" + encodeURIComponent(term);
     }
     this.crossTerms.next(this.crNames);
   }
   
   removeFromCrossReference(term: string): void {
-    this.crNames = this.crNames.split("&&ingredient[]=" + encodeURI(term)).join("");
-    this.crNames = this.crNames.split("ingredient[]=" + encodeURI(term) + "&&").join(""); /* NOTE: this sucks */
-    this.crNames = this.crNames.split("ingredient[]=" + encodeURI(term)).join("");
+    this.crNames = this.crNames.split("&&ingredient[]=" + encodeURIComponent(term)).join("");
+    this.crNames = this.crNames.split("ingredient[]=" + encodeURIComponent(term) + "&&").join(""); /* NOTE: this sucks */
+    this.crNames = this.crNames.split("ingredient[]=" + encodeURIComponent(term)).join("");
     console.log(this.crNames);
     this.crossTerms.next(this.crNames);
   }

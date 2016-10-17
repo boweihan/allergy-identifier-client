@@ -13,7 +13,7 @@
   <div class="col-sm-4 vs-products-columns" style="border-right: 2px solid white;">
     <div *ngIf="products">
       <ul class="vs-clear-style" *ngFor="let product of products | async" class="search-result" >
-        <li class='vs-search-results'><i class="fa fa-plus vs-plus" aria-hidden="true" (click)="addToProductArray(product)"></i>{{product.name}}</li>
+        <li class='vs-search-results'><i class="fa fa-plus vs-plus" aria-hidden="true" (click)="addToProductArray(product)"></i>{{product.name}}{{product.id}}</li>
       </ul>
     </div>
   </div>

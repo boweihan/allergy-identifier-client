@@ -31,17 +31,17 @@ export class ProductsComponent implements OnInit {
   
   addToCrossReference(term: string): void {
     if (!this.crNames.length) {
-      this.crNames = this.crNames + "product[]=" + encodeURI(term);
+      this.crNames = this.crNames + "product[]=" + encodeURIComponent(term);
     } else {
-      this.crNames = this.crNames + "&&product[]=" + encodeURI(term);
+      this.crNames = this.crNames + "&&product[]=" + encodeURIComponent(term);
     }
     this.crossTerms.next(this.crNames);
   }
   
   removeFromCrossReference(term: string): void {
-    this.crNames = this.crNames.split("&&product[]=" + encodeURI(term)).join("");
-    this.crNames = this.crNames.split("product[]=" + encodeURI(term) + "&&").join(""); /* NOTE: this sucks */
-    this.crNames = this.crNames.split("product[]=" + encodeURI(term)).join("");
+    this.crNames = this.crNames.split("&&product[]=" + encodeURIComponent(term)).join("");
+    this.crNames = this.crNames.split("product[]=" + encodeURIComponent(term) + "&&").join(""); /* NOTE: this sucks */
+    this.crNames = this.crNames.split("product[]=" + encodeURIComponent(term)).join("");
     console.log(this.crNames);
     this.crossTerms.next(this.crNames);
   }
