@@ -24,7 +24,7 @@ const routes: Routes = [
     component: IngredientsComponent
   },
   {
-    path: 'analyze',
+    path: 'finder',
     component: CrossReferenceComponent
   },
 ];

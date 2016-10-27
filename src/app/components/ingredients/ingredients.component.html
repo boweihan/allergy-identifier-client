@@ -36,7 +36,7 @@
   <div class="col-sm-4 vs-ingredients-columns" style="border-left: 2px solid white;">
     <div *ngIf="crProducts">
       <ul class="vs-clear-style" *ngFor="let product of crProducts | async" class="search-result" >
-        <li class='vs-cross-ingredients-products'>{{product.name}}</li>
+        <li class='vs-cross-ingredients-products'>{{product.name}} <br /><span style='font-style: italic; text-align: center; display: block;'>Category: {{product.categories}}</span></li>
       </ul>
     </div>
   </div>
