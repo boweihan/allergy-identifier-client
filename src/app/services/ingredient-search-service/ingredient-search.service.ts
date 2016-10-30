@@ -12,7 +12,7 @@ export class IngredientSearchService {
 
   getIngredients(term: string): Observable<Ingredient[]> {
     return this.http
-      .get("http://localhost:3000/ingredients?name="+term)
+      .get("https://ccrosser.herokuapp.com/ingredients?name="+term)
       .map((r: Response) => r.json() as Ingredient[]);
   }
 }

@@ -12,7 +12,7 @@ export class ProductSearchService {
 
   getProducts(term: string): Observable<Product[]> {
     return this.http
-      .get("http://localhost:3000/products?name="+term)
+      .get("https://ccrosser.herokuapp.com/products?name="+term)
       .map((r: Response) => r.json() as Product[]);
   }
 }

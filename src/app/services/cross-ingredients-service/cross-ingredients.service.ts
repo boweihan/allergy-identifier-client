@@ -12,7 +12,7 @@ export class CrossIngredientsService {
 
   getCrossReferencedProducts(ingredients: string): Observable<Product[]> {
     return this.http
-      .get("http://localhost:3000/cross_ingredients?"+ingredients)
+      .get("https://ccrosser.herokuapp.com/cross_ingredients?"+ingredients)
       .map((r: Response) => r.json() as Product[]);
   }
 }
