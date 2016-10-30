@@ -48,7 +48,7 @@ export class IngredientsComponent implements OnInit {
   }
   
   addToIngredientArray(ingredient) {
-    if (this.crossIngredients === [] || this.crossIngredients.includes(ingredient) === false) { /* NOTE: this error is not a real error */
+    if (this.crossIngredients === [] || (this.crossIngredients as any).includes(ingredient) === false) { /* NOTE: this error is not a real error */
       this.crossIngredients.push(ingredient);  
       this.addToCrossReference(ingredient.name);
     }

@@ -47,7 +47,7 @@ export class ProductsComponent implements OnInit {
   }
   
   addToProductArray(product) {
-    if (this.crossProducts === [] || this.crossProducts.includes(product) === false) { /* NOTE: this error is not a real error */
+    if (this.crossProducts === [] || (this.crossProducts as any).includes(product) === false) { /* NOTE: this error is not a real error */
       this.crossProducts.push(product);  
       this.addToCrossReference(product.name);
     }
