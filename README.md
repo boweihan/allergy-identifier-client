@@ -1,31 +1,19 @@
-# AllergyClient
+#Cosmetic Crosser
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.16.
+This project was made with angular2 on the front-end which is consuming a rails API. The goal was to allow users to cross-reference products/ingredients. 
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Users can use this application to:
+    - search by product name to find ingredients
+    - search by ingredient name to find products
+    - select multiple products to find common ingredients
+    - select multiple ingredients to find common products
+    
+Making this information readily available can be useful for avoiding allergenic substances and identifying personal sensitivities. 
 
-## Code scaffolding
+The API for this project can be found at:
+https://github.com/boweihan/allergy
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+This project is currently hosted at:
+https://boweihan.github.io/allergy_client
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Tech: Rails 5.0.0, Angular 2.0.0
