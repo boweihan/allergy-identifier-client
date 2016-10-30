@@ -5,11 +5,11 @@
     "experimentalDecorators": true,
     "lib": ["es6", "dom"],
     "mapRoot": "./",
-    "module": "es7",
+    "module": "es6",
     "moduleResolution": "node",
     "outDir": "../dist/out-tsc",
     "sourceMap": true,
-    "target": "es7",
+    "target": "es6",
     "typeRoots": [
       "../node_modules/@types"
     ]
