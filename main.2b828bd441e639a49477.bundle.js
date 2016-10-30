@@ -66031,7 +66031,7 @@ module.exports = ".vs-ingredients-page {\n  padding-bottom: 50px;\n}\n\n.vs-clea
 /* 695 */
 /***/ function(module, exports) {
 
-module.exports = ".vs-landing-background {\n  background-image: url(\"../assets/landing1.jpg\");\n  filter: grayscale(100%);\n  height: calc(100vh - 78px);\n  width: 100vw;\n}\n\n.vs-landing-title {\n  padding: 150px 0px 0px 350px;\n  font-size: 3em;\n  color: white;\n  font-family: 'Gentium Book Basic', serif;\n  text-transform: uppercase;\n}"
+module.exports = ".vs-landing-background {\n  background-image: url(\"../allergy_client/assets/landing1.jpg\");\n  filter: grayscale(100%);\n  height: calc(100vh - 78px);\n  width: 100vw;\n}\n\n.vs-landing-title {\n  padding: 150px 0px 0px 350px;\n  font-size: 3em;\n  color: white;\n  font-family: 'Gentium Book Basic', serif;\n  text-transform: uppercase;\n}"
 
 /***/ },
 /* 696 */
